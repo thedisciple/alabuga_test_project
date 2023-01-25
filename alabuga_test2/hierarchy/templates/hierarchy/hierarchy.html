@@ -1,0 +1,56 @@
+{% extends 'main/layout.html' %}
+
+{% block head_part %}
+    <title>Hierarchy</title>
+{% endblock %}
+
+{% block content %}
+    <h1>
+        Иерархия
+    </h1>
+    <p>
+        <h2>
+            Олигархи
+        </h2>
+    {% for citizen in lords_citizens %}
+        <div>
+            <b>
+                {{citizen.name}} {{citizen.surname}}, {{citizen.age}} лет, {{citizen.status}}, ЗП: {{citizen.salary}} тугриков, подчиняется {{citizen.vassal_of}}
+            </b>
+        </div>
+    {% endfor %}
+    </p>
+    <p>
+        <h2>
+            Солдаты
+        </h2>
+        {% for citizen in soldiers_citizens %}
+            <div>
+                <b>
+                    {{citizen.name}} {{citizen.surname}}, {{citizen.age}} лет, {{citizen.status}}, ЗП: {{citizen.salary}} тугриков, подчиняется {{citizen.vassal_of}}
+                </b>
+            </div>
+        {% endfor %}
+    </p>
+    <p>
+        <h2>
+            Пролетарии
+        </h2>
+        {% for citizen in slaes1_citizens %}
+            <div>
+                <b>
+                    {{citizen.name}} {{citizen.surname}}, {{citizen.age}} лет, {{citizen.status}}, ЗП: {{citizen.salary}} тугриков, подчиняется {{citizen.vassal_of}}
+                </b>
+            </div>
+        {% endfor %}
+    </p>
+    <p>
+        {% for citizen in slaves2_citizens %}
+            <div>
+                <b>
+                    {{citizen.name}} {{citizen.surname}}, {{citizen.age}} лет, {{citizen.status}}, ЗП: {{citizen.salary}} тугриков, подчиняется {{citizen.vassal_of}}
+                </b>
+            </div>
+        {% endfor %}
+    </p>
+{% endblock %}
